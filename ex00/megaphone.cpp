@@ -8,7 +8,7 @@ int	main(int ac, char **av)
 	for (int i = 1; i < ac; i++)
 	{
 		std::string str = av[i];
-		for (std::size_t j = 0; j < str.length(); j++)
+		for (unsigned long j = 0; j < str.length(); j++)
 			str[j] = static_cast<char>(std::toupper(str[j]));
 		std::cout << str;
 	}
