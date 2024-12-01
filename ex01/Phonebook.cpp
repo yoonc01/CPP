@@ -18,7 +18,7 @@ void	Phonebook::addContact(Contact& contact)
 
 void Phonebook::searchContact(int idx)
 {
-	if (idx < 0 || idx > MAXIDX)
+	if (idx < 0 || idx >= MAXIDX)
 		std::cerr << "Error: Out of index range." << std::endl;
 	else if (_contacts[idx].getRegistered() == false)
 		std::cerr << "Idx " << idx << " is not registered yet." << std::endl;

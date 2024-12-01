@@ -3,7 +3,7 @@
 #include "Contact.hpp"
 
 Contact::Contact()
-	: _firstName(""), _lastName(""), _nickName(""), _phoneNumber(""), _secret("") {}
+	: _firstName(""), _lastName(""), _nickName(""), _phoneNumber(""), _secret(""), _registered(false) {}
 
 Contact::~Contact() {}
 
@@ -51,9 +51,9 @@ std::string	Contact::truncate(const std::string& str, unsigned long maxLength)
 
 void	Contact::printShort() const
 {
-	std::cout << std::setw(10) << truncate(_firstName) << "|";
-	std::cout << std::setw(10) << truncate(_lastName) << "|";
-	std::cout << std::setw(10) << truncate(_nickName) << std::endl;
+	std::cout << std::setw(10) << truncate(_firstName, 10) << "|";
+	std::cout << std::setw(10) << truncate(_lastName, 10) << "|";
+	std::cout << std::setw(10) << truncate(_nickName, 10) << std::endl;
 }
 
 void	Contact::printLong() const

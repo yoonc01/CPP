@@ -6,15 +6,14 @@
 
 static std::string trim(const std::string& str)
 {
-	unsigned long start;
-	unsigned long end;
+	unsigned long start = 0;
+	unsigned long end = str.length();
 
-	start = 0;
 	while (start < str.length() && std::isspace(str[start]))
 		start++;
-	end = str.length();
 	while (end > start && std::isspace(str[end - 1]))
 		end--;
+
 	return (str.substr(start, end - start));
 }
 
@@ -28,12 +27,8 @@ static bool	isStrNotPrintable(const std::string &str)
 
 static bool isValidInput(const std::string &str)
 {
-	std::string trimed_str = trim(str);
-	if (trimed_str == "")
-		return (false);
-	else if (isStrNotPrintable(trimed_str))
-		return (false);
-	return (true);
+	std::string trimmedStr = trim(str);
+	return (!(trimmedStr == "" || isStrNotPrintable(trimmedStr)));
 }
 
 static std::string returnValidInput(std::string statement)
@@ -43,7 +38,8 @@ static std::string returnValidInput(std::string statement)
 	while (true)
 	{
 		std::cout << statement;
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+			exit(0);
 		if (isValidInput(input))
 			return input;
 		std::cerr << statement.substr(0, statement.size() - 2) + " cannot be empty." << std::endl;
@@ -52,7 +48,6 @@ static std::string returnValidInput(std::string statement)
 
 static void	add(Phonebook& pb)
 {
-	std::string input;
 	Contact		ct;
 
 	std::cout << "\nAdd new contact on #" << pb.getIdx() << std::endl;
@@ -64,6 +59,7 @@ static void	add(Phonebook& pb)
 	ct.setRegistered(true);
 	pb.addContact(ct);
 }
+
 static void	search(Phonebook& pb)
 {
 	std::string	input;
@@ -77,13 +73,10 @@ static void	search(Phonebook& pb)
 		if (!(iss >> idx))
 		{
 			std::cerr << "Input is not a valid integer." << std::endl;
-			break;
+			continue;
 		}
-		else
-		{
-			pb.searchContact(idx);
-			break;
-		}
+		pb.searchContact(idx);
+		break;
 	}
 }
 
@@ -101,14 +94,12 @@ int	main(int ac, char **av)
 	while (true)
 	{
 		std::cout << "\nSelect the command (Add, Search, Exit): ";
-		std::getline(std::cin, input);
-
+		if (!std::getline(std::cin, input) || input == "Exit")
+			exit(0);
 		if (input == "Add")
 			add(pb);
 		else if (input == "Search")
 			search(pb);
-		else if (input == "Exit")
-			break;
 		else
 			std::cerr << "Invalid command" << std::endl;
 	}
