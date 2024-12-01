@@ -1,28 +1,17 @@
 #include <iostream>
 #include <string>
 
-using std::cout;
-using std::string;
-
-char	toUpper(char c)
-{
-	if (c >= 'a' && c <= 'z')
-		return (c - 'a' + 'A');
-	return (c);
-}
-
 int	main(int ac, char **av)
 {
 	if (ac == 1)
-		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	else
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	for (int i = 1; i < ac; i++)
 	{
-		for (int i = 1; i < ac; i++)
-		{
-			string str = av[i];
-			for (unsigned long j = 0; j < str.length(); j++)
-				cout << toUpper(str[j]);
-		}
+		std::string str = av[i];
+		for (std::size_t j = 0; j < str.length(); j++)
+			str[j] = static_cast<char>(std::toupper(str[j]));
+		std::cout << str;
 	}
+	std::cout << '\n';
 	return (0);
 }
