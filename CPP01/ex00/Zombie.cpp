@@ -17,5 +17,5 @@ void	Zombie::announce(void)
 
 void	Zombie::setName(std::string name)
 {
-	this->_name = name;
+	_name = name;
 }
