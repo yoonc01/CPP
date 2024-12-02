@@ -12,4 +12,5 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	harl.complain(av[1]);
+	return (0);
 }
