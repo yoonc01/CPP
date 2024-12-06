@@ -16,6 +16,8 @@ std::string	WordChanger::changeWord(const std::string &s1, const std::string &s2
 {
 	std::string::size_type n = 0;
 
+	if (s1.empty())
+		return (_totalStr);
 	while (true)
 	{
 		n = _totalStr.find(s1, n);
