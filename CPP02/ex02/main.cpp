@@ -18,22 +18,22 @@ int main(void)
 
     std::cout << "+ test" << std::endl;
     std::cout << Fixed(0.75f) + Fixed(0.5f) << std::endl;
-    std::cout << Fixed(2000.75f) + Fixed(0.05f) << std::endl;
+    std::cout << Fixed(200.75f) + Fixed(0.5f) << std::endl;
     std::cout << std::endl;
 
     std::cout << "- test" << std::endl;
     std::cout << Fixed(0.75f) - Fixed(0.5f) << std::endl;
-    std::cout << Fixed(2000.75f) - Fixed(0.05f) << std::endl;
+    std::cout << Fixed(200.75f) - Fixed(0.5f) << std::endl;
     std::cout << std::endl;
 
     std::cout << "* test" << std::endl;
     std::cout << Fixed(0.75f) * Fixed(0.5f) << std::endl;
-    std::cout << Fixed(2000.75f) * Fixed(0.05f) << std::endl;
+    std::cout << Fixed(200.75f) * Fixed(0.5f) << std::endl;
     std::cout << std::endl;
 
     std::cout << "/ test" << std::endl;
     std::cout << Fixed(0.75f) / Fixed(0.5f) << std::endl;
-    std::cout << Fixed(2000.75f) / Fixed(0.05f) << std::endl;
+    std::cout << Fixed(100.75f) / Fixed(0.5f) << std::endl;
     std::cout << std::endl;
 
     return (0);

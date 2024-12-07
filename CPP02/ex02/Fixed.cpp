@@ -8,10 +8,9 @@ Fixed::Fixed() : _rawBits(0)
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed& obj)
+Fixed::Fixed(const Fixed& obj) : _rawBits(obj.getRawBits())
 {
     std::cout << "Copy constructor called" << std::endl;
-    *this = obj;
 }
 
 Fixed&  Fixed::operator=(const Fixed& obj)
@@ -59,7 +58,7 @@ Fixed   Fixed::operator*(const Fixed& obj) const
 {
     Fixed   tmp;
 
-    tmp._rawBits = _rawBits * obj._rawBits;
+    tmp.setRawBits(_rawBits * obj._rawBits >> _fractionBits);
     return (tmp);
 }
 
@@ -67,7 +66,12 @@ Fixed   Fixed::operator/(const Fixed& obj) const
 {
     Fixed   tmp;
 
-    tmp._rawBits = _rawBits / obj._rawBits;
+    if (obj._rawBits == 0)
+    {
+        std::cerr << "Error: Division by zero!" << std::endl;
+        return (Fixed(0));
+    }
+    tmp.setRawBits((_rawBits << _fractionBits) / obj._rawBits);
     return (tmp);
 }
 
@@ -161,11 +165,6 @@ const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
     return (b);
 }
 
-
-
-
-
-
 int Fixed::getRawBits(void) const
 {
     std::cout << "getRawBits member function called" << std::endl;
@@ -180,7 +179,7 @@ void    Fixed::setRawBits(int const rawBits)
 
 int Fixed::toInt(void) const
 {
-    return (_rawBits >> 8);
+    return (_rawBits >> _fractionBits);
 }
 
 float   Fixed::toFloat(void) const
