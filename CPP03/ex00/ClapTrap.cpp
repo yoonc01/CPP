@@ -14,9 +14,12 @@ ClapTrap::ClapTrap(std::string name)
 }
 
 ClapTrap::ClapTrap(const ClapTrap& obj)
+    : _name(obj._name), 
+      _hitPoints(obj._hitPoints), 
+      _energyPoints(obj._energyPoints), 
+      _attackDamage(obj._attackDamage)
 {
     std::cout << "ClapTrap copy constructor called!" << std::endl;
-    *this = obj;
 }
 
 ClapTrap::~ClapTrap()
