@@ -13,9 +13,7 @@ WrongCat::WrongCat(const WrongCat& obj) : WrongAnimal(obj.getType())
 WrongCat&	WrongCat::operator=(const WrongCat& obj)
 {
 	if (this != &obj)
-	{
-		_type = obj._type;
-	}
+		WrongAnimal::operator=(obj);
 	std::cout << _type << " copy assignment operator" << std::endl;
 	return (*this);
 }
