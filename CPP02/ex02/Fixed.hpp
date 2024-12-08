@@ -6,7 +6,9 @@
 class   Fixed
 {
     private:
-        int              _rawBits;
+        // 오버플로우 방지를 위해 long으로 선언
+        // _fractionBits를 16으로 설정한 것에 대한 조치임
+        long              _rawBits;
         static const int _fractionBits;
 
     public:
@@ -34,8 +36,8 @@ class   Fixed
         const Fixed operator--(int);
         Fixed&      operator--();
 
-        int     getRawBits(void) const;
-        void    setRawBits(int const raw);
+        long     getRawBits(void) const;
+        void    setRawBits(long const raw);
         int     toInt(void) const;
         float   toFloat(void) const;
 

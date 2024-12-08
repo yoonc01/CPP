@@ -1,7 +1,8 @@
 #include <cmath>
 #include "Fixed.hpp"
 
-const int   Fixed::_fractionBits = 8;
+// 정밀성을 위해 _fractionBits를 16으로 조정
+const int   Fixed::_fractionBits = 16;
 
 Fixed::Fixed() : _rawBits(0)
 {
@@ -165,13 +166,13 @@ const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
     return (b);
 }
 
-int Fixed::getRawBits(void) const
+long Fixed::getRawBits(void) const
 {
     std::cout << "getRawBits member function called" << std::endl;
     return (_rawBits);
 }
 
-void    Fixed::setRawBits(int const rawBits)
+void    Fixed::setRawBits(long const rawBits)
 {
     std::cout << "setRawBits member function called" << std::endl;
     _rawBits = rawBits;

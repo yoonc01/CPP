@@ -33,7 +33,7 @@ int main(void)
 
     std::cout << "/ test" << std::endl;
     std::cout << Fixed(0.75f) / Fixed(0.5f) << std::endl;
-    std::cout << Fixed(100.75f) / Fixed(0.125f) << std::endl;
+    std::cout << Fixed(100.75f) / Fixed(0.05f) << std::endl;
     std::cout << std::endl;
 
     return (0);
