@@ -2,6 +2,8 @@
 
 Brain::Brain()
 {
+	for (int i = 0; i < 100; i++)
+		_ideas[i] = "Default";
 	std::cout << "Brain constructor" << std::endl;
 }
 

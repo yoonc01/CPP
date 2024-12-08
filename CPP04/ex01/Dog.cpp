@@ -9,7 +9,7 @@ Dog::Dog() : Animal("Dog")
 Dog::Dog(const Dog& obj): Animal(obj.getType())
 {
 	std::cout << _type << " copy constructor" << std::endl;
-	_brain = new Brain(*(obj._brain));
+	_brain = new Brain(*(obj.getBrain()));
 }
 
 Dog&	Dog::operator=(const Dog& obj)
@@ -17,7 +17,7 @@ Dog&	Dog::operator=(const Dog& obj)
 	if (this != &obj)
 	{
 		_type = obj.getType();
-		*_brain = *(obj._brain);
+		*_brain = *(obj.getBrain());
 	}
 	std::cout << _type << " copy assignment operator" << std::endl;
 	return (*this);
@@ -32,4 +32,9 @@ Dog::~Dog()
 void	Dog::makeSound() const
 {
 	std::cout << "Woof Woof" << std::endl;
+}
+
+Brain*	Dog::getBrain() const
+{
+	return (_brain);
 }
