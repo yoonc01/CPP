@@ -2,25 +2,25 @@
 
 Cat::Cat() : Animal("Cat")
 {
-	std::cout << _type << " constructor" << std::endl;
+	std::cout << "Cat constructor" << std::endl;
 }
 
 Cat::Cat(const Cat& obj): Animal(obj.getType())
 {
-	std::cout << _type << " copy constructor" << std::endl;
+	std::cout << "Cat copy constructor" << std::endl;
 }
 
 Cat&	Cat::operator=(const Cat& obj)
 {
 	if (this != &obj)
-		_type = obj.getType();
-	std::cout << _type << " copy assignment operator" << std::endl;
+		Animal::operator=(obj);
+	std::cout << "Cat copy assignment operator" << std::endl;
 	return ((*this));
 }
 
 Cat::~Cat()
 {
-	std::cout << _type << " destructor" << std::endl;
+	std::cout << "Cat destructor" << std::endl;
 }
 
 void	Cat::makeSound() const
