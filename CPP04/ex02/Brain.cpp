@@ -34,8 +34,9 @@ const std::string&	Brain::getIdea(const int idx) const
 {
 	if (idx < 0 || idx >= 100)
 	{
+		static const std::string&	error = "Invalid Index";
 		std::cerr << "Error: Attempt to access invalid idea index " << idx << std::endl;
-		return ("Invalid Index");
+		return (error);
     }
 	return (_ideas[idx]);
 }
