@@ -1,6 +1,6 @@
 #include "Animal.hpp"
 
-Animal::Animal() : _type("default")
+Animal::Animal() : _type("animal")
 {
 	std::cout << "Animal constructor" << std::endl;
 }
@@ -23,9 +23,7 @@ Animal::~Animal()
 Animal& Animal::operator=(const Animal& obj)
 {
 	if (this != &obj)
-	{
 		_type = obj.getType();
-	}
 	std::cout << "Animal copy assignment operator" << std::endl;
 	return (*this);
 }

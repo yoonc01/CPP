@@ -6,7 +6,7 @@ Cat::Cat() : Animal("Cat")
 	_brain = new Brain();
 }
 
-Cat::Cat(const Cat& obj): Animal(obj.getType())
+Cat::Cat(const Cat& obj): Animal(obj)
 {
 	std::cout << "Cat copy constructor" << std::endl;
 	_brain = new Brain(*(obj.getBrain()));
@@ -16,7 +16,7 @@ Cat&	Cat::operator=(const Cat& obj)
 {
 	if (this != &obj)
 	{
-		_type = obj.getType();
+		Animal::operator=(obj);
 		*_brain = *(obj.getBrain());
 	}
 	std::cout << "Cat copy assignment operator" << std::endl;

@@ -9,14 +9,16 @@ Brain::Brain()
 
 Brain::Brain(const Brain& obj)
 {
-	std::copy(obj._ideas, obj._ideas + 100, _ideas);
+	for (int i = 0; i < 100; i++)
+		_ideas[i] = obj.getIdea(i);
 	std::cout << "Brain copy constructor" << std::endl;
 }
 
 Brain&	Brain::operator=(const Brain& obj)
 {
 	if (this != &obj)
-		std::copy(obj._ideas, obj._ideas + 100, _ideas);
+		for (int i = 0; i < 100; i++)
+			_ideas[i] = obj.getIdea(i);
 	std::cout << "Brain copy assignment operator" << std::endl;
 	return (*this);
 }
