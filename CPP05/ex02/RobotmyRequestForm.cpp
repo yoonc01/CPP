@@ -25,6 +25,11 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& o
     return (*this);
 }
 
+RobotomyRequestForm::~RobotomyRequestForm()
+{
+    std::cout << "RobotomyRequestForm destructor" << std::endl;
+}
+
 void RobotomyRequestForm::execute(Bureaucrat const& executor) const {
     // 시드를 한 번만 설정하기 위한 static 변수
 	static bool isSeedInitialized = false;

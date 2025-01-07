@@ -25,6 +25,11 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
     return (*this);
 }
 
+ShrubberyCreationForm::~ShrubberyCreationForm()
+{
+    std::cout << "ShrubberyCreationForm destructor" << std::endl;
+}
+
 void ShrubberyCreationForm::execute(Bureaucrat const& executor) const {
 	std::ofstream fout;
 
