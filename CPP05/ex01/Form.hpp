@@ -8,7 +8,7 @@
 #include "Bureaucrat.hpp"
 
 //전방 선언
-// 구 class가 서로 참조하는 경우 순환 참조가 발생하기 때문이다.
+// 두 class가 서로 참조하는 경우 순환 참조가 발생하기 때문이다.
 class Bureaucrat;
 
 class Form {
