@@ -10,11 +10,11 @@ int main() {
 		Bureaucrat A("A", 1);
 		std::cout << A << "\n\n";
 
-		ShrubberyCreationForm shrubberyForm("michang1");
-		RobotomyRequestForm roboForm1("michang1");
-		RobotomyRequestForm roboForm2("michang1");
-		RobotomyRequestForm roboForm3("michang1");
-		PresidentialPardonForm PardonForm("michang1");
+		ShrubberyCreationForm shrubberyForm("hyoyoon1");
+		RobotomyRequestForm roboForm1("hyoyoon1");
+		RobotomyRequestForm roboForm2("hyoyoon1");
+		RobotomyRequestForm roboForm3("hyoyoon1");
+		PresidentialPardonForm PardonForm("hyoyoon1");
 
 		A.signForm(shrubberyForm);
 		A.signForm(roboForm1);
@@ -36,11 +36,11 @@ int main() {
 		Bureaucrat B("B", 50);
 		std::cout << B << "\n\n";
 
-		ShrubberyCreationForm shrubberyForm("michang2");
-		RobotomyRequestForm roboForm1("michang2");
-		RobotomyRequestForm roboForm2("michang2");
-		RobotomyRequestForm roboForm3("michang2");
-		PresidentialPardonForm PardonForm("michang2");
+		ShrubberyCreationForm shrubberyForm("hyoyoon2");
+		RobotomyRequestForm roboForm1("hyoyoon2");
+		RobotomyRequestForm roboForm2("hyoyoon2");
+		RobotomyRequestForm roboForm3("hyoyoon2");
+		PresidentialPardonForm PardonForm("hyoyoon2");
 
 		B.signForm(shrubberyForm);
 		B.signForm(roboForm1);
@@ -62,11 +62,11 @@ int main() {
 		Bureaucrat C("C", 150);
 		std::cout << C << "\n\n";
 
-		ShrubberyCreationForm shrubberyForm("michang3");
-		RobotomyRequestForm roboForm1("michang3");
-		RobotomyRequestForm roboForm2("michang3");
-		RobotomyRequestForm roboForm3("michang3");
-		PresidentialPardonForm PardonForm("michang3");
+		ShrubberyCreationForm shrubberyForm("hyoyoon3");
+		RobotomyRequestForm roboForm1("hyoyoon3");
+		RobotomyRequestForm roboForm2("hyoyoon3");
+		RobotomyRequestForm roboForm3("hyoyoon3");
+		PresidentialPardonForm PardonForm("hyoyoon3");
 
 		C.signForm(shrubberyForm);
 		C.signForm(roboForm1);
