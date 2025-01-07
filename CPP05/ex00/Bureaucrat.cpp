@@ -5,8 +5,9 @@ Bureaucrat::Bureaucrat() : _name("Default"), _grade(1)
     std::cout << "Bureaucrat constructor" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
+    _setGrade(grade);
     std::cout << "Bureaucrat parameterized constructor" << std::endl;
 }
 
