@@ -44,6 +44,7 @@ class AForm {
         AForm(std::string name, std::string target, int gradeToSign, int gradeToExecute);
         AForm(const Form& obj);
         Form& operator=(const Form& obj);
+        void    checkExecutePermission(const Bureaucrat& executor) const;
         
     public:
         //소멸자를 public에 선언한 이유를 명확히 하기
