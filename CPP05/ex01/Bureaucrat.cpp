@@ -5,8 +5,9 @@ Bureaucrat::Bureaucrat() : _name("Default"), _grade(1)
     std::cout << "Bureaucrat constructor" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
+    _setGrade(grade);
     std::cout << "Bureaucrat parameterized constructor" << std::endl;
 }
 
@@ -25,7 +26,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& obj)
     if (this != &obj)
         // name은 const로 변경 x
         // 복사 생성자는 const는 건들지 않는 것이 일반적임
-        _grade = obj.getGrade();
+        _setGrade(obj.getGrade());
     std::cout << "Bureaucrat copy assignment operator" << std::endl;
     return (*this);
 }
