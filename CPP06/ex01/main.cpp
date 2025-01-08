@@ -2,7 +2,7 @@
 
 int main() {
 	Data data;
-	data.name = "michang";
+	data.name = "hyoyoon";
 	data.age = 10;
 
 	std::cout << "Data ptr : " << &data << std::endl;
