@@ -1,9 +1,6 @@
 #include "Bureaucrat.hpp"
 #include "Intern.hpp"
 
-//누수 제대로 잡은 건지 확인
-//signForm하다가 오류나면 누수 잡고 가는건가???
-
 int main() {
 
 	Intern intern;
