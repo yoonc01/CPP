@@ -14,6 +14,7 @@ $(NAME) : $(OBJS)
 
 clean:
 	rm -f $(OBJS)
+	rm -f hyoyoon1_shrubbery hyoyoon2_shrubbery
 
 fclean: clean
 	rm -f $(NAME)
