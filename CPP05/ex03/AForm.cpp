@@ -43,7 +43,7 @@ std::string AForm::getName() const
     return (_name);
 }
 
-std::string AForm:getTarget() const
+std::string AForm::getTarget() const
 {
     return (_target);
 }

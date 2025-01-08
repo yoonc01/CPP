@@ -33,17 +33,17 @@ class AForm {
         class FormNotSignedException : public std::exception {
             private:
                 virtual const char* what() const throw();
-        }
+        };
 
         class FileNotOpenException : public std::exception {
             private:
                 virtual const char* what() const throw();
-        }
+        };
         
         AForm();
         AForm(std::string name, std::string target, int gradeToSign, int gradeToExecute);
-        AForm(const Form& obj);
-        Form& operator=(const Form& obj);
+        AForm(const AForm& obj);
+        AForm& operator=(const AForm& obj);
         void    checkExecutePermission(const Bureaucrat& executor) const;
         
     public:
@@ -58,6 +58,6 @@ class AForm {
         virtual void execute(Bureaucrat const& executor) const = 0;
 };
 
-std::ostream& operator<<(std::ostream& os, const Form& obj);
+std::ostream& operator<<(std::ostream& os, const AForm& obj);
 
 #endif
