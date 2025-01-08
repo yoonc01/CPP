@@ -25,6 +25,7 @@ Base* generate(void) {
 	return (0);
 }
 
+//generate에서 없으면 0을 return하니 여기서 시작 전에 p를 확인하면 이상한가??
 void identify(Base* p) {
 	if (dynamic_cast<A*>(p)) {
 		std::cout << "pointer of A" << std::endl;
@@ -38,6 +39,7 @@ void identify(Base* p) {
 	}
 }
 
+//generate에서 없으면 0을 return하니 여기서 시작 전에 p를 확인하면 이상한가??
 void identify(Base& p) {
 	try {
 		(void) dynamic_cast<A&>(p);
