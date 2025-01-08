@@ -55,6 +55,7 @@ int Form::getGradeToExecute() const
     return (_gradeToExecute);
 }
 
+//참조를 선택하여 함수 내부에서 객체를 복사본으로 사용하지 않도록 유도
 void    Form::beSigned(const Bureaucrat& obj)
 {
     if (obj.getGrade() > _gradeToSign)

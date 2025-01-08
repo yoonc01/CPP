@@ -36,7 +36,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const& executor) const {
 	AForm::checkExecutePermission(executor);
 	fout.open((getTarget() + "_shrubbery").c_str());
 	if (!fout.is_open())
-		throw AForm::FileNotOpenException();
+		throw AForm::FileNotOpenedException();
 	fout << "                           SDFSDFDS\n";
 	fout << "                SDF    SDFSDFDSFFSDSDFSDF\n";
 	fout << "             DSFDSFDSFSDJKLFNKLOJRNGJIONDFSKLFSDJL\n";
@@ -84,4 +84,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const& executor) const {
 	fout << "             IKDSFJKL:SDJFKLSDJFKLSDJFKLDJSFKLDJSFKLSD\n";
 	fout << "             IKDSFJKL:SDJFKLSDJFKLSDJFKLDJSFKLDJSFKLSD\n";
 	fout.close();
+	if (fout.fail())
+		throw AForm::FileNotClosedException();
 }

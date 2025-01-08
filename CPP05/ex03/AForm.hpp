@@ -35,7 +35,12 @@ class AForm {
                 virtual const char* what() const throw();
         };
 
-        class FileNotOpenException : public std::exception {
+        class FileNotOpenedException : public std::exception {
+            private:
+                virtual const char* what() const throw();
+        };
+
+        class FileNotClosedException : public std::exception {
             private:
                 virtual const char* what() const throw();
         };
@@ -47,7 +52,6 @@ class AForm {
         void    checkExecutePermission(const Bureaucrat& executor) const;
         
     public:
-        //소멸자를 public에 선언한 이유를 명확히 하기
         virtual ~AForm();
         std::string getName() const;
         std::string getTarget() const;

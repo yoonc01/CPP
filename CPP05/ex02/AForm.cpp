@@ -89,8 +89,12 @@ const char* AForm::FormNotSignedException::what() const throw() {
 	return ("Form is not signed");
 }
 
-const char* AForm::FileNotOpenException::what() const throw() {
-	return ("File is not open");
+const char* AForm::FileNotOpenedException::what() const throw() {
+	return ("File is not opened");
+}
+
+const char* AForm::FileNotClosedException::what() const throw() {
+	return ("File is not closed");
 }
 
 std::ostream& operator<<(std::ostream& os, const AForm& obj) {
