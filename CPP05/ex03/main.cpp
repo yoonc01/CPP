@@ -7,7 +7,7 @@
 int main() {
 
 	Intern intern;
-	AForm* form;
+	AForm* form = NULL;
 
 	try {
 		std::cout << "-- Bureaucrat 'A' grade '1'\n\n";
