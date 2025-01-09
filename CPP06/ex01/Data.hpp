@@ -5,7 +5,7 @@
 
 struct  Data {
     std::string name;
-    int         age;
+    int         value;
 };
 
 #endif
