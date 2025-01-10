@@ -10,7 +10,7 @@ int main()
 		std::string obj2 = "obj2";
 		std::string obj3 = "obj3";
 		std::string arr[3] = {obj1, obj2, obj3};
-		::iter(arr, 3, printValue);
+		hyoyoon::iter(arr, 3, hyoyoon::printValue);
 	}
 
 	{
@@ -19,18 +19,18 @@ int main()
 		const std::string obj2 = "obj2";
 		const std::string obj3 = "obj3";
 		std::string arr[3] = {obj1, obj2, obj3};
-		::iter(arr, 3, printValue);
+		hyoyoon::iter(arr, 3, hyoyoon::printValue);
 	}
 
 	{
 		std::cout << "\nint test\n";
 		int arr[3] = {0, 1, 2};
-		::iter(arr, 3, printValue);
+		hyoyoon::iter(arr, 3, hyoyoon::printValue);
 	}
 
 	{
 		std::cout << "\nconst int test\n";
 		const int arr[3] = {0, 1, 2};
-		::iter(arr, 3, printValue);
+		hyoyoon::iter(arr, 3, hyoyoon::printValue);
 	}
 }
