@@ -15,3 +15,5 @@ template <typename T> int easyfind(T& container, int n)
     }
     return (-1);
 }
+
+#endif
