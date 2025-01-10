@@ -1,6 +1,6 @@
 CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
-NAME	= Base
+NAME	= Whatever
 SRCS	= main.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
