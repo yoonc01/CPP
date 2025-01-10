@@ -1,12 +1,15 @@
 #ifndef WHATEVER_HPP
 # define WHATEVER_HPP
 
-// 여기서 +에 대한 정의가 되어 있지 않아 오류가 날 거 같은데 확인 좀
+//a = a + b;
+//b = a - b;
+//a = a - b;
+// 여기서 +에 대한 정의가 되어 있지 않아 오류가 날 거 같음
 template <typename T> void swap(T& a, T& b)
 {
-    a = a + b;
-    b = a - b;
-    a = a - b;
+    T temp = a;
+    a = b;
+    b = temp;
 }
 
 template <typename T> T const& min(T const& a, T const& b)
@@ -30,7 +33,7 @@ template <typename T> T const& max(T const& a, T const& b)
     return (a);
 }
 
-template <typename T> T& min(T& a, T& b)
+template <typename T> T& max(T& a, T& b)
 {
     if (b > a)
         return (b);
