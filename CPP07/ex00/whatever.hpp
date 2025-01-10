@@ -5,39 +5,42 @@
 //b = a - b;
 //a = a - b;
 // 여기서 +에 대한 정의가 되어 있지 않아 오류가 날 거 같음
-template <typename T> void swap(T& a, T& b)
-{
-    T temp = a;
-    a = b;
-    b = temp;
-}
 
-template <typename T> T const& min(T const& a, T const& b)
-{
-    if (a < b)
-        return (a);
-    return (b);
-}
+namespace hyoyoon {
+    template <typename T> void swap(T& a, T& b)
+    {
+        T temp = a;
+        a = b;
+        b = temp;
+    }
 
-template <typename T> T& min(T& a, T& b)
-{
-    if (a < b)
-        return (a);
-    return (b);
-}
-
-template <typename T> T const& max(T const& a, T const& b)
-{
-    if (b > a)
+    template <typename T> T const& min(T const& a, T const& b)
+    {
+        if (a < b)
+            return (a);
         return (b);
-    return (a);
-}
+    }
 
-template <typename T> T& max(T& a, T& b)
-{
-    if (b > a)
+    template <typename T> T& min(T& a, T& b)
+    {
+        if (a < b)
+            return (a);
         return (b);
-    return (a);
+    }
+
+    template <typename T> T const& max(T const& a, T const& b)
+    {
+        if (b > a)
+            return (b);
+        return (a);
+    }
+
+    template <typename T> T& max(T& a, T& b)
+    {
+        if (b > a)
+            return (b);
+        return (a);
+    }
 }
 
 #endif
