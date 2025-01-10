@@ -5,13 +5,9 @@
 
 #define ARRAY_SIZE 750
 
-// void leaks_check() {
-// 	std::cout << "leaks check\n";
-// 	system("leaks --list array");
-// }
+// leak check
 
 int main() {
-	// atexit(leaks_check);
 	{
 		std::cout << "--Subject test\n";
 		Array<int> numbers(ARRAY_SIZE);
@@ -22,12 +18,10 @@ int main() {
 			numbers[i] = value;
 			mirror[i] = value;
 		}
-		// SCOPE
 		{
 			Array<int> tmp = numbers;
 			Array<int> test(tmp);
 		}
-
 		for (int i = 0; i < ARRAY_SIZE; i++) {
 			if (mirror[i] != numbers[i]) {
 				std::cerr << "didn't save the same value!!" << std::endl;
