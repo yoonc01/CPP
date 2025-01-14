@@ -1,6 +1,8 @@
 #include "Array.hpp"
 
-template <typename T> Array<T>::Array() : _arr(NULL), _size(0) {}
+
+//delete과 new 연산의 일관성 유지를 위해 new T[0] 할당
+template <typename T> Array<T>::Array() : _arr(new T[0]), _size(0) {}
 
 template <typename T> Array<T>::Array(unsigned int n) : _arr(new T[n]), _size(n)
 {
