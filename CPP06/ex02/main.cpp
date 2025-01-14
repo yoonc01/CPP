@@ -31,7 +31,7 @@ Base* generate(void) {
 void identify(Base* p) {
 	if (p == NULL)
 	{
-		std::cout << "Null pointer provided" << std::endl;
+		std::cout << "Null pointer cannot identify type." << std::endl;
 		return ;
 	}
 
@@ -41,45 +41,54 @@ void identify(Base* p) {
 		std::cout << "pointer of B" << std::endl;
 	} else if (dynamic_cast<C*>(p)) {
 		std::cout << "pointer of C" << std::endl;
+	} else {
+		std::cout << "Unknown type" << std::endl;
 	}
 }
 
-//generate에서 없으면 0을 return하니 여기서 시작 전에 p를 확인하면 이상한가??
-void identify(Base& p) {
+template <typename T>
+bool	tryCastAndPrint(Base& p, const std::string typeName)
+{
 	try {
-		(void) dynamic_cast<A&>(p);
-		std::cout << "referance of A" << std::endl;
-	} catch (const std::exception& e) {
-		try {
-			(void) dynamic_cast<B&>(p);
-			std::cout << "referance of B" << std::endl;
-		} catch (const std::exception& e) {
-			try {
-				(void) dynamic_cast<C&>(p);
-				std::cout << "referance of C" << std::endl;
-			} catch (const std::exception& e) {
-				std::cout << "Unknown type" << std::endl;
-			}
-		}
+		(void) dynamic_cast<T&>(p);
+		std::cout << "reference of " << typeName << std::endl;
+		return (true);
+	} catch(const std::exception& e) {
+		return false;
 	}
+}
+
+void identify(Base& p) {
+	if (tryCastAndPrint<A>(p, "A")) return ;
+	if (tryCastAndPrint<B>(p, "B")) return ;
+	if (tryCastAndPrint<C>(p, "C")) return ;
+	std::cout << "Unknown type" << std::endl;
+
 }
 
 int main() {
 	Base* first = generate();
 	Base* second = generate();
 	Base* third = generate();
+	Base* four = new Base();
 
+	std::cout << std::endl;
 	identify(first);
 	identify(second);
 	identify(third);
+	identify(four);
 
+	std::cout << std::endl;
 	identify(*first);
 	identify(*second);
 	identify(*third);
+	identify(*four);
 
+	std::cout << std::endl;
 	delete first;
 	delete second;
 	delete third;
+	delete four;
 	std::cout << std::endl;
 	return (0);
 }
