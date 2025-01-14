@@ -14,28 +14,29 @@ namespace hyoyoon {
         b = temp;
     }
 
-    template <typename T> T const& min(T const& a, T const& b)
+    template <typename T> T const min(T const& a, T const& b)
     {
         if (a < b)
             return (a);
         return (b);
     }
 
-    template <typename T> T& min(T& a, T& b)
+    // T&를 반환하면 반환된 값에 새로운 값 대입 시 a 혹은 b도 바뀜
+    template <typename T> T min(T& a, T& b)
     {
         if (a < b)
             return (a);
         return (b);
     }
 
-    template <typename T> T const& max(T const& a, T const& b)
+    template <typename T> T const max(T const& a, T const& b)
     {
         if (b > a)
             return (b);
         return (a);
     }
 
-    template <typename T> T& max(T& a, T& b)
+    template <typename T> T max(T& a, T& b)
     {
         if (b > a)
             return (b);
