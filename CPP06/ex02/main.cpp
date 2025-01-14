@@ -63,7 +63,6 @@ void identify(Base& p) {
 	if (tryCastAndPrint<B>(p, "B")) return ;
 	if (tryCastAndPrint<C>(p, "C")) return ;
 	std::cout << "Unknown type" << std::endl;
-
 }
 
 int main() {
