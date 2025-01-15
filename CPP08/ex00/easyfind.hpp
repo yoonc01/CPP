@@ -3,7 +3,8 @@
 
 #include <algorithm>
 
-template <typename T> int easyfind(T& container, int n)
+template <typename T>
+int easyfind(T& container, int n)
 {
     int idx = 0;
 
