@@ -5,8 +5,6 @@
 
 #define ARRAY_SIZE 750
 
-// leak check
-
 int main() {
 	{
 		std::cout << "--Subject test\n";
